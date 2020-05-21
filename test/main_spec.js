@@ -254,7 +254,7 @@ describe("webpcss", () => {
 
   it("check with @media-query", () => {
     const input = "@media all and (min-width:100px){ .test { background-image: url(test.jpg); } }";
-    const output = input + " @media all and (min-width:100px){ .webp .test{ background-image: url(test.webp); } }";
+    const output = input + " @media all and (min-width:100px){ .webp .test { background-image: url(test.webp); } }";
     return transform(input).then(res => {
       expect(output).to.be.eql(res.css);
     });
@@ -265,7 +265,7 @@ describe("webpcss", () => {
       "@media all and (max-width:200px){ @media all and (min-width:100px){ .test { background-image: url(test.jpg); } } }";
     const output =
       "@media all and (max-width:200px){ @media all and (min-width:100px){ .test { background-image: url(test.jpg); } } }" +
-      " @media all and (max-width:200px){ @media all and (min-width:100px){ .webp .test{ background-image: url(test.webp); } } }";
+      " @media all and (max-width:200px){ @media all and (min-width:100px){ .webp .test { background-image: url(test.webp); } } }";
     transform(input).then(res => {
       expect(output).to.be.eql(res.css);
     });
@@ -281,7 +281,7 @@ describe("webpcss", () => {
       "} } }";
     const output =
       input +
-      " @media all and (max-width:200px){ @media all and (min-width:100px){ .webp .test{ background-image: url(test.webp); } } }";
+      " @media all and (max-width:200px){ @media all and (min-width:100px){ .webp .test { background-image: url(test.webp); } } }";
     transform(input).then(res => {
       expect(output).to.be.eql(res.css);
     });

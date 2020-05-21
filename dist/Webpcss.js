@@ -306,7 +306,7 @@ var Webpcss = function () {
             }));
 
             decl.raws.before = " ";
-            decl.moveTo(noWebpRule);
+            decl.moveTo ? decl.moveTo(noWebpRule) : noWebpRule.append(decl);
           }
 
           // add .webp
@@ -347,8 +347,11 @@ var Webpcss = function () {
     value: function appendToCopyTree(aRoot, aRule) {
       var root = aRoot;
       var rule = aRule;
+      rule.raws.before = "\n";
       while (root.type !== "root") {
+        rule.raws.before = " ";
         rule = root.clone().removeAll().append(rule);
+        rule.raws.before = " ";
         root = root.parent;
       }
       return rule;

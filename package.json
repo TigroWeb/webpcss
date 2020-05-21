@@ -34,7 +34,7 @@
     "lodash": "^4.17.15",
     "mime-types": "^2.1.19",
     "parse-data-uri": "^0.2.0",
-    "postcss": "5.2.5",
+    "postcss": "^7.0.30",
     "urldata": "0.0.4",
     "webp-converter": "^2.1.6"
   },
